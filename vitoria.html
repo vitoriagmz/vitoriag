@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- TROQUE: o título aparece na aba do navegador e no Google -->
+  <title>Seu Nome | Portfólio de programação</title>
+  <meta name="description" content="Portfólio de Seu Nome, estudante de programação. Projetos em HTML, CSS e JavaScript.">
+
+  <!-- Fontes do Google (precisa de internet para carregar) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="topo">
+    <div class="container topo__interno">
+      <a class="topo__logo" href="#inicio">Seu Nome</a>
+      <nav aria-label="Principal">
+        <ul class="menu">
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#projetos">Projetos</a></li>
+          <li><a href="#habilidades">Habilidades</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+
+    <!-- ========== INÍCIO ========== -->
+    <section class="hero container" id="inicio">
+      <div class="hero__texto">
+        <h1>Oi, eu sou <span class="hero__nome">Seu Nome</span>.</h1>
+        <p class="hero__descricao">
+          Estou aprendendo a programar e construindo projetos para sair do zero
+          e chegar no meu primeiro emprego na área.
+        </p>
+        <div class="hero__acoes">
+          <a class="botao" href="#projetos">Ver meus projetos</a>
+          <a class="botao botao--vazio" href="#contato">Entrar em contato</a>
+        </div>
+      </div>
+
+      <!-- Um "cartão de código" só para dar personalidade. Edite os valores! -->
+      <pre class="codigo" aria-label="Resumo em código: nome, cidade, tecnologias e disponibilidade"><code><span class="c-pal">const</span> pessoa = {
+  <span class="c-chave">nome</span>: <span class="c-txt">"Seu Nome"</span>,
+  <span class="c-chave">cidade</span>: <span class="c-txt">"Brasília, DF"</span>,
+  <span class="c-chave">aprendendo</span>: [
+    <span class="c-txt">"HTML"</span>,
+    <span class="c-txt">"CSS"</span>,
+    <span class="c-txt">"JavaScript"</span>
+  ],
+  <span class="c-chave">disponivel</span>: <span class="c-pal">true</span>
+};<span class="cursor" aria-hidden="true"></span></code></pre>
+    </section>
+
+    <!-- ========== SOBRE ========== -->
+    <section class="secao container" id="sobre">
+      <h2 class="secao__titulo">Sobre mim</h2>
+      <div class="secao__corpo texto">
+        <p>
+          Conte aqui, em poucas linhas, quem você é. Por que começou a programar?
+          O que te anima? Escreva do jeito que você fala: portfólio bom parece
+          uma pessoa de verdade, não um currículo copiado.
+        </p>
+        <p>
+          Fale também do que você quer agora: um estágio, um primeiro emprego,
+          projetos freelance ou apenas trocar ideia com outras pessoas da área.
+        </p>
+      </div>
+    </section>
+
+    <!-- ========== PROJETOS ========== -->
+    <section class="secao container" id="projetos">
+      <h2 class="secao__titulo">Projetos</h2>
+      <div class="secao__corpo">
+        <!-- Esta lista é montada pelo script.js. Para adicionar projetos, edite o arquivo script.js -->
+        <ul class="projetos" id="lista-projetos"></ul>
+      </div>
+    </section>
+
+    <!-- ========== HABILIDADES ========== -->
+    <section class="secao container" id="habilidades">
+      <h2 class="secao__titulo">Habilidades</h2>
+      <div class="secao__corpo">
+        <div class="grupo">
+          <h3>Já uso no dia a dia</h3>
+          <ul class="tags">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>Git e GitHub</li>
+          </ul>
+        </div>
+        <div class="grupo">
+          <h3>Estou estudando</h3>
+          <ul class="tags">
+            <li>React</li>
+            <li>Node.js</li>
+            <li>SQL</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CONTATO ========== -->
+    <section class="secao container" id="contato">
+      <h2 class="secao__titulo">Contato</h2>
+      <div class="secao__corpo texto">
+        <p>Quer conversar sobre uma vaga, um projeto ou só dar uma dica? Me escreva:</p>
+        <ul class="contatos">
+          <!-- TROQUE os três links abaixo pelos seus -->
+          <li><a href="mailto:seuemail@exemplo.com">seuemail@exemplo.com</a></li>
+          <li><a href="https://github.com/seu-usuario" target="_blank" rel="noopener">github.com/seu-usuario</a></li>
+          <li><a href="https://linkedin.com/in/seu-usuario" target="_blank" rel="noopener">linkedin.com/in/seu-usuario</a></li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="rodape">
+    <div class="container">
+      <p>© <span id="ano">2026</span> Seu Nome. Feito à mão com HTML, CSS e JavaScript.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

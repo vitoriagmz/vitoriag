@@ -1,0 +1,157 @@
+/* ==========================================================
+   ESTILO DO PORTFÓLIO
+   Dica: as cores e fontes ficam no bloco :root logo abaixo.
+   Mude ali e o site inteiro muda junto.
+   ========================================================== */
+
+:root {
+  --fundo: #eef2f7;        /* fundo da página */
+  --tinta: #14213d;        /* texto principal e cartão de código */
+  --suave: #4f5f7a;        /* texto secundário */
+  --linha: #c9d4e4;        /* linhas divisórias */
+  --azul: #2f5bff;         /* cor de destaque (links e botões) */
+  --azul-escuro: #1b3fd1;  /* azul ao passar o mouse */
+  --amarelo: #ffd166;      /* textos dentro do cartão de código */
+
+  --fonte-titulo: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --fonte-texto: "DM Sans", "Segoe UI", system-ui, sans-serif;
+  --fonte-codigo: ui-monospace, "Cascadia Code", Consolas, monospace;
+}
+
+/* ---------- Base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+
+body {
+  margin: 0;
+  background: var(--fundo);
+  color: var(--tinta);
+  font-family: var(--fonte-texto);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+
+h1, h2, h3 { font-family: var(--fonte-titulo); line-height: 1.1; margin: 0; }
+p { margin: 0 0 1rem; }
+ul { list-style: none; margin: 0; padding: 0; }
+
+a { color: var(--azul); text-underline-offset: 0.2em; }
+a:hover { color: var(--azul-escuro); }
+
+/* Foco visível para quem navega pelo teclado */
+:focus-visible { outline: 3px solid var(--azul); outline-offset: 3px; border-radius: 2px; }
+
+.container { width: min(100% - 2.5rem, 68rem); margin-inline: auto; }
+
+.pular {
+  position: absolute; left: 1rem; top: -4rem;
+  background: var(--tinta); color: #fff; padding: 0.5rem 1rem; z-index: 20;
+}
+.pular:focus { top: 1rem; }
+
+/* ---------- Topo ---------- */
+.topo {
+  position: sticky; top: 0; z-index: 10;
+  background: rgba(238, 242, 247, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--linha);
+}
+.topo__interno {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 1rem; flex-wrap: wrap; padding-block: 0.75rem;
+}
+.topo__logo {
+  font-family: var(--fonte-titulo); font-weight: 800; font-size: 1.25rem;
+  color: var(--tinta); text-decoration: none;
+}
+.menu { display: flex; gap: 1.25rem; flex-wrap: wrap; }
+.menu a { color: var(--tinta); text-decoration: none; font-weight: 500; }
+.menu a:hover { color: var(--azul); text-decoration: underline; }
+
+/* ---------- Início ---------- */
+.hero {
+  display: grid; gap: 2.5rem; align-items: center;
+  padding-block: 4rem 3rem;
+}
+.hero h1 {
+  font-size: clamp(2.6rem, 8vw, 4.75rem);
+  font-weight: 800; letter-spacing: -0.03em;
+}
+.hero__nome { color: var(--azul); }
+.hero__descricao { font-size: 1.2rem; color: var(--suave); max-width: 32rem; margin-top: 1.25rem; }
+.hero__acoes { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1.75rem; }
+
+.botao {
+  display: inline-block; padding: 0.8rem 1.4rem; border-radius: 0.5rem;
+  background: var(--azul); color: #fff; font-weight: 700; text-decoration: none;
+  border: 2px solid var(--azul); transition: background 0.15s, color 0.15s;
+}
+.botao:hover { background: var(--azul-escuro); border-color: var(--azul-escuro); color: #fff; }
+.botao--vazio { background: transparent; color: var(--azul); }
+.botao--vazio:hover { background: var(--azul); color: #fff; }
+
+/* Cartão de código */
+.codigo {
+  margin: 0; padding: 1.5rem; border-radius: 0.75rem;
+  background: var(--tinta); color: #e6ecf7;
+  font-family: var(--fonte-codigo); font-size: 0.95rem; line-height: 1.7;
+  overflow-x: auto;
+}
+.c-pal { color: #9db4ff; }
+.c-chave { color: #c9d4e4; }
+.c-txt { color: var(--amarelo); }
+.cursor {
+  display: inline-block; width: 0.55em; height: 1.1em; margin-left: 0.2em;
+  vertical-align: text-bottom; background: var(--amarelo);
+  animation: piscar 1.1s steps(1) infinite;
+}
+@keyframes piscar { 50% { opacity: 0; } }
+
+/* ---------- Seções ---------- */
+.secao {
+  display: grid; gap: 1.5rem;
+  padding-block: 3rem; border-top: 1px solid var(--linha);
+}
+.secao__titulo { font-size: 1.75rem; letter-spacing: -0.01em; }
+.texto { max-width: 40rem; }
+
+/* Projetos: lista com divisórias, sem cartões */
+.projeto { padding-block: 1.5rem; border-bottom: 1px solid var(--linha); }
+.projeto:first-child { padding-top: 0; }
+.projeto:last-child { border-bottom: 0; }
+.projeto h3 { font-size: 1.4rem; margin-bottom: 0.5rem; }
+.projeto p { max-width: 38rem; color: var(--suave); }
+.projeto__links { display: flex; gap: 1.25rem; margin: 0.75rem 0 0; font-weight: 700; }
+
+/* Tags */
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.tags li {
+  padding: 0.3rem 0.8rem; border: 1.5px solid var(--tinta);
+  border-radius: 999px; font-weight: 500; font-size: 0.95rem;
+}
+.tags--pequenas { margin: 0.25rem 0 0; }
+.tags--pequenas li { border-color: var(--linha); font-size: 0.85rem; padding: 0.15rem 0.65rem; color: var(--suave); }
+
+/* Habilidades */
+.grupo + .grupo { margin-top: 1.75rem; }
+.grupo h3 { font-size: 1.1rem; margin-bottom: 0.75rem; }
+
+/* Contato */
+.contatos li { margin-bottom: 0.4rem; font-weight: 500; }
+
+/* ---------- Rodapé ---------- */
+.rodape { border-top: 1px solid var(--linha); padding-block: 2rem; color: var(--suave); font-size: 0.95rem; }
+.rodape p { margin: 0; }
+
+/* ---------- Telas maiores ---------- */
+@media (min-width: 52rem) {
+  .hero { grid-template-columns: 1.1fr 0.9fr; padding-block: 6rem 4rem; }
+  .secao { grid-template-columns: 12rem 1fr; gap: 3rem; padding-block: 4rem; }
+}
+
+/* Respeita quem prefere menos animação */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .cursor { animation: none; }
+}
